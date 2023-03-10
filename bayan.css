@@ -1,2 +1,73 @@
-https: //$gumirus.github.io/cssBayan/cssBayan/index.html
-;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 2;
+  background-color: #425050;
+}
+.CSSbayan {
+  max-width: 600px;
+  margin: 20px auto;
+}
+.CSSbayan_bayan {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  color: #fff;
+  overflow: hidden;
+}
+.CSSbayan_bayan input {
+  position: absolute;
+  opacity: 0;
+}
+.CSSbayan_bayan label {
+  position: relative;
+  display: block;
+  padding: 0 0 0 1em;
+  background: #0c0d0d;
+  font-weight: bold;
+  line-height: 3;
+  cursor: pointer;
+}
+.blue label {
+  background: #2980b9;
+}
+.CSSbayan_bayan-content {
+  max-height: 0;
+  overflow: hidden;
+  background: #92a7bf;
+  -webkit-transition: max-height 0.35s;
+  -o-transition: max-height 0.35s;
+  transition: max-height 0.35s;
+}
+
+/* :checked */
+.CSSbayan_bayan input:checked ~ .CSSbayan_bayan-content {
+  max-height: 100vh;
+}
+
+/* иконки */
+.CSSbayan_bayan label::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 3em;
+  height: 3em;
+  line-height: 3;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.CSSbayan_bayan input[type="checkbox"] + label::after {
+  content: "#";
+}
+.CSSbayan_bayan input[type="radio"] + label::after {
+  content: "\20BC";
+}
+.CSSbayan_bayan input[type="checkbox"]:checked + label::after {
+  transform: rotate(400deg);
+}
+.CSSbayan_bayan input[type="radio"]:checked + label::after {
+  transform: rotateX(200deg);
+}
